@@ -85,8 +85,16 @@ def main():
                     print("shortcode : functionality \n 'ac' : Add Credentials \n 'vc' : View Credentials \n 'cp' : Copy Password \n 'lo' : Log Out ")
                         get_shortcode = str(input().lower())
 
-                        #
+                        #enable user to add credentials
                         if get_shortcode == 'ac':
+                            print("Add the account credentials you want to store:")
+                            print("-"*20)
+                            app_name = str(input("Application Name:"))
+                            user_name = str(input("Your Username For The Application"))
+                            
+                            #optional password generation for user
+                            print("Input 'y' to autogenerate password and 'n' to input your own")
+                            app_password = str(input("Password:"))
 
 
 
