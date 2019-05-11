@@ -1,5 +1,5 @@
 import pyperclip
-
+ 
 class Credentials:
     
     credentials_list = [] #list that holds credentials data
@@ -77,4 +77,35 @@ class Credentials:
         pyperclip.copy(found_password.app_password)
                 
 class User:
-    pass
+    
+    user_list = []#list that holds user account information
+    def create_user(self):
+        '''
+        Method that adds user login info to user_list
+        '''
+        User.user_list.append(self)
+    '''
+    Object that creates instances of User class    
+    Args:
+        user information required for account creation and login
+    Returns:
+        user account
+    '''
+    
+    def __init__ (self, fname, lname, user_name, login_password):
+       self.fname = fname
+       self.lname = lname
+       self.user_name = user_name
+       self.login_password = login_password
+
+    @classmethod
+    def auth_user(cls, username, password):
+        '''
+        Method that authenticates user to allow access to application
+        '''
+        for user in cls.user_list:
+            if user.user_name == username and user.login_password == password:
+                return True
+        return False
+
+   
