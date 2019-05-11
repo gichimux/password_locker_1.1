@@ -1,5 +1,5 @@
 import unittest
-from password import Credentials
+from models import Credentials
 import pyperclip
 
 class TestCredentials(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestCredentials(unittest.TestCase):
     '''
     def setUp(self):
         '''
-        Method that creates instances of class for testing
+        Method that creates a credentials object for testing
         '''
         
         self.new_credentials = Credentials(1,1,"jane","medium.com", "x")
