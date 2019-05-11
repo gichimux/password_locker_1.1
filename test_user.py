@@ -9,13 +9,12 @@ class TestUser(unittest.TestCase):
          '''
          Method that creates a user Object for testing
          '''
-         self.new_user = User(1, "cersei", "jon","cerjon", "x")
+         self.new_user = User("cersei", "jon","cerjon", "x")
 
     def test_init(self):
         '''
         test if object is instantiated correctly
         '''
-        self.assertEqual(self.new_user.user_id, 1)
         self.assertEqual(self.new_user.fname, "cersei")
         self.assertEqual(self.new_user.lname, "jon")
         self.assertEqual(self.new_user.user_name, "cerjon")
