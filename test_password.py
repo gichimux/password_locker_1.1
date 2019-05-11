@@ -22,5 +22,13 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.app_name, "medium.com")
         self.assertEqual(self.new_credentials.app_password, "1234")
 
+    def test_save_credentials(self):
+        
+        '''
+        Test if credentials are saved in the credentials list
+        '''
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
 if __name__ == "__main__":
     unittest.main()
