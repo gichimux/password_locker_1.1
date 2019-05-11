@@ -65,6 +65,28 @@ def main():
             print("="*20)
 
         #logging in interface
+        elif shortcode == "ln":
+            print("ENter your Username and Password to verify:")
+            print("="*30)
+            user_name = str(input("Username:"))
+            login_password = str(input("Password:"))
+            auth = authenticate(user_name,login_password)
+            #throw error if username or password is incorrect
+            if auth == False:
+                print("\n")
+                print("FATAL: Invalid Username or Password")
+                print(">"*30)
+            #log user in if username and password is True
+            elif auth == True:
+                print("\n")
+                print(f"{auth.user_name} is logged in to Password Locker:")
+                print("-"*20)
+                while True:
+                    print("shortcode : functionality \n 'ac' : Add Credentials \n 'vc' : View Credentials \n 'cp' : Copy Password \n 'lo' : Log Out ")
+                        get_shortcode = str(input().lower())
+
+                        #
+                        if get_shortcode == 'ac':
 
 
 
