@@ -37,6 +37,10 @@ def password_generator(length):
         counter+=1
     return "".join(password_list)
 
+#function to copy password to clipboard
+def copy_password(name):
+    Credentials.copy_password(name)
+
 
 
 
