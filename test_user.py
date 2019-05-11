@@ -20,5 +20,20 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.user_name, "cerjon")
         self.assertEqual(self.new_user.login_password, "x")
 
+    def test_create_account(self):
+        '''
+        test to check if application adds user account to user_list
+        '''
+        User.user_list.append(self)
+
+    def test_auth(self):
+        '''
+        test to check if application authetication works
+        '''
+        self.new_user.create_user()
+        authenticate = User.auth_user("cerjon", "x")
+
+        self.assertTrue(authenticate)
+
 if __name__ == "__main__":
     unittest.main()
