@@ -2,8 +2,8 @@ from models import Credentials, User
 import string, random, time
 
 #function that creates new user account
-def new_user(fname,lname,user_name,login_password):
-    new_user = User(fname, lname, user_name, login_password)
+def new_user(user_name,login_password):
+    new_user = User(user_name, login_password)
     return new_user
 
 #function that saves the new user account to user list
@@ -41,6 +41,30 @@ def password_generator(length):
 def copy_password(name):
     Credentials.copy_password(name)
 
+def main():
+    '''
+    The main function
+    '''
+    print("\n")
+    print("===============Password_locker_Version_1.1===============")
+    print("*"*30)
+    while True:
+        #interface for new user account creation
+        print("shortcode : functionality\n 'ca' : create your account\n 'ln' : log in \n 'ex' : exit" )
+        shortcode = input().lower().strip()
+        if shortcode == "ca":
+            print("*"*8 + "Create Your Username"+"*"*8)
+            user_name = str(input("Username:"))
+            print("*"*8 +"Create Your Password:"+ "*"*8)
+            login_password = str(input("Password:"))
+            print("\n")
+            
+            create_account(new_user(user_name,login_password))
+
+            print(f" Good news, {user_name} has been created! \n login to proceed:")
+            print("="*20)
+
+        #logging in interface
 
 
 
