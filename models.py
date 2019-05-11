@@ -21,10 +21,8 @@ class Credentials:
         credentials data and their indices in the list database
     '''
     
-    def __init__ (self, user_id, credentials_id, user_name, app_name, app_password):
+    def __init__ (self, user_name, app_name, app_password):
         self.id = id
-        self.user_id = user_id
-        self.credentials_id = credentials_id
         self.user_name = user_name
         self.app_name = app_name
         self.app_password = app_password
