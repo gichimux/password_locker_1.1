@@ -46,5 +46,17 @@ class TestCredentials(unittest.TestCase):
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
+    def test_delete_credential(self):
+        '''
+        test if the application can delete a credentials object in credentials list
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials() #delete credentials
+        self.assertEqual(len(Credentials.credentials_list),1)
+
 if __name__ == "__main__":
     unittest.main()
