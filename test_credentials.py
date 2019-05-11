@@ -11,14 +11,12 @@ class TestCredentials(unittest.TestCase):
         Method that creates a credentials object for testing
         '''
         
-        self.new_credentials = Credentials(1,1,"jane","medium.com", "x")
+        self.new_credentials = Credentials("jane","medium.com", "x")
     
     def test_init(self):
         '''
         test if object is instantiated correctly
         '''
-        self.assertEqual(self.new_credentials.user_id, 1)
-        self.assertEqual(self.new_credentials.credentials_id, 1)
         self.assertEqual(self.new_credentials.user_name, "jane")
         self.assertEqual(self.new_credentials.app_name, "medium.com")
         self.assertEqual(self.new_credentials.app_password, "x")
@@ -43,7 +41,7 @@ class TestCredentials(unittest.TestCase):
         test to check if the program can save multiple credentials object in the credentials_list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials = Credentials("john","dribble.com", "y")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -53,7 +51,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials = Credentials("john","dribble.com", "y")
         test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials() #delete credentials
@@ -64,7 +62,7 @@ class TestCredentials(unittest.TestCase):
         test to check if contact exists method works
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials(1,1,"john","dribble.com", "y")
+        test_credentials = Credentials("john","dribble.com", "y")
         test_credentials.save_credentials()
 
         credentials_exists = Credentials.credentials_exists("dribble.com")
@@ -76,7 +74,7 @@ class TestCredentials(unittest.TestCase):
         test to check if we can find an application credential by name and display data
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials = Credentials("john","dribble.com", "y")
         test_credentials.save_credentials()
 
         found_password = Credentials.find_by_app_name("dribble.com")
