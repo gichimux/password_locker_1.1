@@ -90,9 +90,7 @@ class User:
         user account
     '''
     
-    def __init__ (self, fname, lname, user_name, login_password):
-       self.fname = fname
-       self.lname = lname
+    def __init__ (self,user_name, login_password):
        self.user_name = user_name
        self.login_password = login_password
 
