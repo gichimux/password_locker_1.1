@@ -10,7 +10,7 @@ class TestCredentials(unittest.TestCase):
         Method that creates instances of class for testing
         '''
         
-        self.new_credentials = Credentials(1,1,"jane","medium.com", '1234')
+        self.new_credentials = Credentials(1,1,"jane","medium.com", "x")
     
     def test_init(self):
         '''
@@ -20,7 +20,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.credentials_id, 1)
         self.assertEqual(self.new_credentials.user_name, "jane")
         self.assertEqual(self.new_credentials.app_name, "medium.com")
-        self.assertEqual(self.new_credentials.app_password, "1234")
+        self.assertEqual(self.new_credentials.app_password, "x")
 
     def test_save_credentials(self):
         
@@ -29,6 +29,22 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+    
+    def tearDown(self):
+        '''
+        teardown method to clean up after test runs
+        '''
+        Credentials.credentials_list = []
+    
+    #test cases for class methods    
+    def test_multiple_credentials(self):
+        '''
+        test to check if the program can save multiple credentials object in the credentials_list
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
 if __name__ == "__main__":
     unittest.main()
