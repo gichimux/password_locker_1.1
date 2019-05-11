@@ -1,5 +1,6 @@
 import unittest
 from password import Credentials
+import pyperclip
 
 class TestCredentials(unittest.TestCase):
     '''
@@ -48,7 +49,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_delete_credential(self):
         '''
-        test if the application can delete a credentials object in credentials list
+        test if the application can delete an application credentials object in credentials list
         '''
 
         self.new_credentials.save_credentials()
@@ -57,6 +58,46 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.delete_credentials() #delete credentials
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_contact_exists(self):
+        '''
+        test to check if contact exists method works
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(1,1,"john","dribble.com", "y")
+        test_credentials.save_credentials()
+
+        credentials_exists = Credentials.credentials_exists("dribble.com")
+        
+        self.assertTrue(credentials_exists)
+        
+    def test_find_contact_by_name(self):
+        '''
+        test to check if we can find an application credential by name and display data
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(2,2,"john","dribble.com", "y")
+        test_credentials.save_credentials()
+
+        found_password = Credentials.find_by_app_name("dribble.com")
+
+        self.assertEqual(found_password.app_password, test_credentials.app_password)
+
+    def test_display_all_credentials(self):
+        '''
+        test if application can list all credentials saved
+        '''
+        self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
+
+    def test_copy_password(self):
+        '''
+        test to confirm that the application can copy the found password on the clipboard
+        '''
+
+        self.new_credentials.save_credentials()
+        Credentials.copy_password("medium.com")
+
+        self.assertEqual(self.new_credentials.app_password,pyperclip.paste())
 
 if __name__ == "__main__":
     unittest.main()

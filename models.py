@@ -3,13 +3,19 @@ import pyperclip
 class Credentials:
     
     credentials_list = [] #list that holds credentials data
-    def add_password(self):
+    def save_credentials(self):
         '''
         Method that adds credentials to list 
         '''
         Credentials.credentials_list.append(self)
 
-    '''
+    def delete_credentials(self):
+        '''
+        Method that deletes credential object from list
+        '''
+        Credentials.credentials_list.remove(self)
+    
+    '''    
     the object that creates instances of credentials class
     Args:
         credentials data and their indices in the list database
@@ -57,7 +63,8 @@ class Credentials:
         for credentials in cls.credentials_list:
             if credentials.app_name == name:
                 return True
-            return False
+            
+        return False
    
     @classmethod
     def copy_password(cls, name):
@@ -66,9 +73,8 @@ class Credentials:
         Args:
             name: name of application provided by find_app_by_name method
         '''     
-        password_found = Credentials.find_by_app_name(name)
-        pyperclip.copy(password_found.app_password)
+        found_password = Credentials.find_by_app_name(name)
+        pyperclip.copy(found_password.app_password)
                 
 class User:
-    #def __init__ (self)
     pass
