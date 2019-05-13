@@ -4,7 +4,7 @@ This is a command line application that gives the user the ability to create or 
 
 # prerequisites
 
-python3.6 installed in your operating system.
+python3.6 is installed in your operating system.
 
 ## installation process
 
