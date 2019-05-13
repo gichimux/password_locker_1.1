@@ -43,5 +43,6 @@ to report bugs or contact me, reach me on this email address: [gichimu.dev@gmail
 
 # Bugs reported
 
-Pyperclip bugs on previous version have been fixed on this one.
+Pyperclip bugs on previous version have been fixed.
+No bugs reported.
 
