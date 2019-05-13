@@ -4,7 +4,7 @@ This is a command line application that gives the user the ability to create or 
 
 # prerequisites
 
-python3.6 installed in your operating system.
+python3.6 is installed in your operating system.
 
 ## installation process
 
@@ -43,5 +43,6 @@ to report bugs or contact me, reach me on this email address: [gichimu.dev@gmail
 
 # Bugs reported
 
-No bugs reported so far
+Pyperclip bugs on previous version have been fixed.
+No bugs reported.
 
