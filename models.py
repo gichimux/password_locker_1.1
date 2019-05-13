@@ -35,18 +35,32 @@ class Credentials:
         Args:
             name: the name of application requested by user
         returns:
-            username and password of application provided
+            password of application provided
         '''
         for credentials in cls.credentials_list:
             if credentials.app_name  == name:
-                return credentials
-
+                return credentials.app_password
+    
+    @classmethod
+    def find_name(cls, name):
+        '''
+        Method that finds credentials in database by application name
+        Args:
+            name: the name of application requested by user
+        returns:
+            name of application provided
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.app_name  == name:
+                return credentials.app_name
+    
     @classmethod
     def display_credentials(cls):
         '''
         Method to display credentials data stored by user
         '''
         return cls.credentials_list
+
     
     @classmethod
     def credentials_exists(cls, name):
@@ -72,7 +86,7 @@ class Credentials:
             name: name of application provided by find_app_by_name method
         '''     
         found_password = Credentials.find_by_app_name(name)
-        pyperclip.copy(found_password.app_password)
+        pyperclip.copy(found_password)
                 
 class User:
     

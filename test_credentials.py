@@ -79,7 +79,7 @@ class TestCredentials(unittest.TestCase):
 
         found_password = Credentials.find_by_app_name("dribble.com")
 
-        self.assertEqual(found_password.app_password, test_credentials.app_password)
+        self.assertEqual(found_password, test_credentials.app_password)
 
     def test_display_all_credentials(self):
         '''
