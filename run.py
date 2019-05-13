@@ -67,7 +67,7 @@ def main():
     '''
     print("\n")
     print("===================Password_locker_Version_1.1=====================")
-    print("*"*45)
+    print("*"*67)
     while True:
         #interface for new user account creation
         print("shortcode : functionality\n 'ca' : create your account\n 'ln' : log in \n 'ex' : exit" )
@@ -81,20 +81,20 @@ def main():
             
             create_account(new_user(user_name,login_password))
 
-            print(f" Good news, {user_name} has been created! \n login to proceed:")
-            print("="*20)
+            print(f" Good news, {user_name} has been created! \n login to proceed")
+            print("="*67)
         
         #terminate the application
         elif shortcode == "ex":
             print("\n")
             print("Application Terminated")
-            print("\\/"*20)
+            print("\\/"*80)
             break
 
         #logging in interface
         elif shortcode == "ln":
             print("Enter your Username and Password to verify:")
-            print("="*30)
+            print("="*67)
             user_name = str(input("Username:"))
             login_password = str(input("Password:"))
             auth = authenticate(user_name,login_password)
@@ -107,7 +107,7 @@ def main():
             elif auth == True:
                 print("\n")
                 print(f"{user_name} is logged in to Password Locker:")
-                print("-"*20)
+                print("="*67)
                 while True:
                     print("shortcode : functionality \n 'ac' : Add Credentials \n 'vc' : View Credentials \n 'cp' : Copy Password \n 'lo' : Log Out \n 'dc' : Delete Credential")
                     get_shortcode = str(input().lower())
@@ -115,7 +115,7 @@ def main():
                     #enable user to add credentials
                     if get_shortcode == 'ac':
                         print("Add the account credentials you want to store:")
-                        print("-"*20)
+                        print("="*67)
                         app_name = str(input("Application Name: ").lower())
                         new_credentials.app_name = app_name
 
@@ -135,8 +135,8 @@ def main():
                             time.sleep(1.3)
                             print("\n")
                             print(f"****Your Password for {app_name} is {app_password}****")
-                            print("="*45)
-                            print("="*45)
+                            print("="*67)
+                            print("="*67)
                             save_credentials(new_credentials(user_name, app_name, app_password))  
 
                             #if user does not want password generated for them    
@@ -148,8 +148,8 @@ def main():
                             print("\n")
 
                             print(f"****Your Password for {app_name} is {app_password}****")
-                            print("="*45)
-                            print("="*45)
+                            print("="*67)
+                            print("="*67)
                             #save credentials given by user
                             save_credentials(new_credentials(user_name, app_name, app_password))  
 
@@ -161,20 +161,21 @@ def main():
                         app_name = get_name(name)
                         
                         print(f"Application name: {app_name}  Password: {password}")
-                        print("="*45)
-                        print("="*45)
+                        print("="*67)
+                        print("="*67)
                         #else:
                         #print(f"***Credentials for the application dont exist in the database \n input 'ac' to add {name} ***")
 
                         #view all credentials
-                        #if name == "a":
-                            #a = display_all_credentials()
-                            #return print(f"{a}\n")
-                        
-                        #elif name not in Credentials.credentials_list:
-                           # print(f"***Credentials for the application dont exist in the database \n input 'ac' to add {name} ***")
-                        #view credentials for specific application
-                        
+                   
+                        if app_name == None:
+                            print(f"***Credentials for the application do not exist in the database \n input 'ac' to add {name} ***")
+                       
+                        #view credentials for all applications
+                    #elif get_shortcode == "a":
+                        #all = display_all_credentials()
+                        #return print(f"{all}\n")
+                            
                         #else:
                             #return print(display_all_credentials())
 
@@ -188,7 +189,7 @@ def main():
                             print("Password copied to clipboard")
                         else:
                             print("Locker did not find an application named {app_name} in the database \n input 'ac' to add {app_name} ")
-                        print("="*20)
+                        print("="*67)
                     
                     #interface to delete credentials
                     elif get_shortcode == "dc":
@@ -198,12 +199,15 @@ def main():
                         app_name = get_name(name)
                         delete_credential(app_name)
                         print(f"Credentials for {name} have been deleted")
-                            
+                        
+                        if app_name == None:
+                            print(f"***Credentials for the {name}application do not exist in the database***")    
+                   
                     #log user out
                     elif get_shortcode == "lo":
                         print("\n")
                         print(f"You have been logged out")
-                        print("\\/"*20)
+                        print("\\/"*40)
                         break
                      
                                      
