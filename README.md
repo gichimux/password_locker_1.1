@@ -28,20 +28,20 @@ short code| result expected
 
 after account creation other further shortcodes enable more functionality
 
-#TECHNOLOGIES USED
+# TECHNOLOGIES USED
 
 the application is made using python 3.6
 
-#author
+# Author
 
 this application was made by george gichimu
 to report bugs or contact me, reach me on this email address:[gichimu.dev@gmail.com](gichimu.dev@gmail.com)
 
-#application url
+# application url
 
 [Password Locker](https://github.com/gichimux/password-locker)
 
-#bugs reported
+# bugs reported
 
 No bugs reported so far
 
