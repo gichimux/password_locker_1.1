@@ -25,7 +25,7 @@ def save_credentials(credentials):
 
 #function that deletes credentials
 def delete_credential(name):
-    Credentials.delete_credentials(name)
+    Credentials.delete_cred(name)
 
 #function that gets the password
 def get_password(name):
@@ -109,7 +109,7 @@ def main():
                 print(f"{user_name} is logged in to Password Locker:")
                 print("-"*20)
                 while True:
-                    print("shortcode : functionality \n 'ac' : Add Credentials \n 'vc' : View Credentials \n 'cp' : Copy Password \n 'lo' : Log Out \n ")
+                    print("shortcode : functionality \n 'ac' : Add Credentials \n 'vc' : View Credentials \n 'cp' : Copy Password \n 'lo' : Log Out \n 'dc' : Delete Credential")
                     get_shortcode = str(input().lower())
 
                     #enable user to add credentials
@@ -191,13 +191,13 @@ def main():
                         print("="*20)
                     
                     #interface to delete credentials
-                    #elif get_shortcode == "dc":
-                        #print("Enter name of application to delete credentials for:")
-                        #name = str(input())
+                    elif get_shortcode == "dc":
+                        print("Enter name of application to delete credentials for:")
+                        name = str(input())
                         
-                        #app_name = get_name(name)
-                        #delete_credential(name)
-                        #print(f"Credentials for {name} have been deleted")
+                        app_name = get_name(name)
+                        delete_credential(app_name)
+                        print(f"Credentials for {name} have been deleted")
                             
                     #log user out
                     elif get_shortcode == "lo":

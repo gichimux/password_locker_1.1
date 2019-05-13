@@ -55,6 +55,15 @@ class Credentials:
                 return credentials.app_name
     
     @classmethod
+    def delete_cred(cls,name):
+        '''
+        Method that deletes a credential when name is passed
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.app_name == name:
+                Credentials.delete_credentials(credentials)
+    
+    @classmethod
     def display_credentials(cls):
         '''
         Method to display credentials data stored by user
