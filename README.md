@@ -2,7 +2,7 @@
 
 This is a command line application that gives the user the ability to create or generate passwords for various applications and websites that the user has been granted access to and save them on runtime.
 
-#prerequisites
+# prerequisites
 
 python3.6 installed in your operating system.
 
