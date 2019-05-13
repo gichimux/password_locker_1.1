@@ -4,12 +4,14 @@ This is a command line application that gives the user the ability to create or 
 
 # prerequisites
 
-python3.6 is installed in your operating system.
+* python3.6 is installed in your operating system.
+* Pyperclip is installed and configured. 
 
 ## installation process
 
 * clone this [repository](https://github.com/gichimux/password-locker)
-* If on linux, configure pyperclip first.
+* Download pyperclip
+* If on linux, type ```$ sudo apt install xsel``` on your terminal to configure pyperclip .
 * Type ** python3.6 run.py ** in your terminal
 
 
