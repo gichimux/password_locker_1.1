@@ -191,7 +191,7 @@ def main():
                             print("Password copied to clipboard")
                         else:
                             print("="*67)
-                            print("Locker did not find an application named {app_name} in the database \n input 'ac' to add {app_name} ")
+                            print(f"Locker did not find an application named {name} in the database \n input 'ac' to add {name} ")
                         print("="*67)
                     
                     #interface to delete credentials
