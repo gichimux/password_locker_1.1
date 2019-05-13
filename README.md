@@ -28,7 +28,7 @@ short code| result expected
     'ln'    | Logs user in  
     'ex'    | Exits the application 
 
-After account creation these shortcodes provided enable more functionality
+Inside the application, these shortcodes enable more functionality
 
 short code| result expected
 ----------------------------
