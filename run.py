@@ -80,7 +80,7 @@ def main():
             print("\n")
             
             create_account(new_user(user_name,login_password))
-
+            print("="*67)
             print(f" Good news, {user_name} has been created! \n login to proceed")
             print("="*67)
         
@@ -160,16 +160,18 @@ def main():
                         password = get_password(name)
                         app_name = get_name(name)
                         
-                        print(f"Application name: {app_name}  Password: {password}")
-                        print("="*67)
-                        print("="*67)
+                        #ERROR HANDLER
+                        if app_name == None:
+                            print("="*67)
+                            print(f"***Credentials for the application do not exist in the database \n input 'ac' to add {name} ***")
+                            print("="*67)    
+                        else:
+                            print(f"Application name: {app_name}  Password: {password}")
+                            print("="*67)
+                            print("="*67)
                         #else:
                         #print(f"***Credentials for the application dont exist in the database \n input 'ac' to add {name} ***")
 
-                        #view all credentials
-                   
-                        if app_name == None:
-                            print(f"***Credentials for the application do not exist in the database \n input 'ac' to add {name} ***")
                        
                         #view credentials for all applications
                     #elif get_shortcode == "a":
@@ -188,6 +190,7 @@ def main():
                             copy_password(name)
                             print("Password copied to clipboard")
                         else:
+                            print("="*67)
                             print("Locker did not find an application named {app_name} in the database \n input 'ac' to add {app_name} ")
                         print("="*67)
                     
@@ -198,11 +201,17 @@ def main():
                         
                         app_name = get_name(name)
                         delete_credential(app_name)
-                        print(f"Credentials for {name} have been deleted")
-                        
+                         #ERROR HANDLER
                         if app_name == None:
-                            print(f"***Credentials for the {name}application do not exist in the database***")    
-                   
+                            print("="*67)
+                            print(f"***Credentials for the {name} application do not exist in the database***")    
+                            print("="*67)
+                        else:
+                            print("="*67)
+                            print(f"Credentials for {name} have been deleted")
+                            print("="*67)
+
+                       
                     #log user out
                     elif get_shortcode == "lo":
                         print("\n")
@@ -213,8 +222,9 @@ def main():
                                      
                     #throw error for invalid shortcodes
                     else:
+                        print("="*67)
                         print("Invalid shortcode")
-                        print("\n"+"*"*30)
+                        print("\n"+"*"*67)
 
         
 
