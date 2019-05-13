@@ -2,7 +2,7 @@
 
 This is a command line application that gives the user the ability to create or generate passwords for various applications and websites that the user has been granted access to and save them on runtime.
 
-#prerequisites
+# prerequisites
 
 python3.6 installed in your operating system.
 
@@ -22,26 +22,26 @@ before account creation, this are the shortcodes used
 
 short code| result expected       
 ----------------------------------      
-    cc    | creates a new account 
+    ca    | creates a new account 
     ln    | logs user out         
     ex    | exits the application 
 
-after account creation other further shortcodes enable more functionality
+After account creation other further shortcodes enable more functionality
 
-#TECHNOLOGIES USED
+# TECHNOLOGIES USED
 
 the application is made using python 3.6
 
-#author
+# Author
 
-this application was made by george gichimu
-to report bugs or contact me, reach me on this email address:[gichimu.dev@gmail.com](gichimu.dev@gmail.com)
+This application was made by george gichimu
+to report bugs or contact me, reach me on this email address: [gichimu.dev@gmail.com](gichimu.dev@gmail.com)
 
-#application url
+# Application url
 
 [Password Locker](https://github.com/gichimux/password-locker)
 
-#bugs reported
+# Bugs reported
 
 No bugs reported so far
 
